@@ -14,6 +14,7 @@
 		0166E1991C2200F400721A70 /* Moving_LettersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166E1981C2200F400721A70 /* Moving_LettersTests.swift */; };
 		0166E1A51C22025900721A70 /* LetterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166E1A41C22025900721A70 /* LetterView.swift */; };
 		0166E1A91C234D2B00721A70 /* Letter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166E1A81C234D2B00721A70 /* Letter.swift */; };
+		0166E1AB1C28B45900721A70 /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0166E1AA1C28B45900721A70 /* Framework.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		0166E19A1C2200F400721A70 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0166E1A41C22025900721A70 /* LetterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LetterView.swift; path = SourceCode/LetterView.swift; sourceTree = "<group>"; };
 		0166E1A81C234D2B00721A70 /* Letter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Letter.swift; sourceTree = "<group>"; };
+		0166E1AA1C28B45900721A70 /* Framework.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +83,10 @@
 			children = (
 				0166E1831C2200F400721A70 /* AppDelegate.swift */,
 				0166E1851C2200F400721A70 /* ViewController.swift */,
-				0166E1A31C22011D00721A70 /* Supporting Files */,
 				0166E1A41C22025900721A70 /* LetterView.swift */,
 				0166E1A81C234D2B00721A70 /* Letter.swift */,
+				0166E1AA1C28B45900721A70 /* Framework.swift */,
+				0166E1A31C22011D00721A70 /* Supporting Files */,
 			);
 			path = "Moving Letters";
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 				0166E1861C2200F400721A70 /* ViewController.swift in Sources */,
 				0166E1A51C22025900721A70 /* LetterView.swift in Sources */,
 				0166E1841C2200F400721A70 /* AppDelegate.swift in Sources */,
+				0166E1AB1C28B45900721A70 /* Framework.swift in Sources */,
 				0166E1A91C234D2B00721A70 /* Letter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -391,6 +395,7 @@
 				0166E19F1C2200F400721A70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0166E1A01C2200F400721A70 /* Build configuration list for PBXNativeTarget "Moving LettersTests" */ = {
 			isa = XCConfigurationList;
@@ -399,6 +404,7 @@
 				0166E1A21C2200F400721A70 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
