@@ -61,7 +61,7 @@ class LetterView: UIView {
         super.init(frame: frame)
 //        self.backgroundColor = .redColor()
         
-        addLetter()
+//        addLetter()
     }
     
     //MARK: - Public
@@ -73,7 +73,16 @@ class LetterView: UIView {
         for i in 0..<maxI {
             // More Strokes in new letter
             if (i >= strokeLayers.count) {
-                
+                // add layer
+                let path = pathForStroke(newLetter.strokes[i])
+                let lineLayer = lineLayerWithPath(path)
+                self.layer.addSublayer(lineLayer)
+                // animate stroke in
+                let animation = CABasicAnimation(keyPath: "strokeEnd")
+                animation.duration = animationDuration
+                animation.fromValue = 0
+                animation.toValue = 1
+                lineLayer.addAnimation(animation, forKey: "strokeEnd")
             }
                 
             // More Strokes in old letter

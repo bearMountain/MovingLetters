@@ -13,13 +13,26 @@ class ViewController: UIViewController {
         
         self.view.backgroundColor = .blueColor();
         addLetterView()
+        addTapRecognizer()
     }
     
     //MARK: - Private
     
+    var letterView = LetterView(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
+    var letters = [A, B]
+    
     func addLetterView() {
-        let letterView = LetterView(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
         view.addSubview(letterView)
+    }
+    
+    func addTapRecognizer() {
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: "tapReceived")
+        self.view.addGestureRecognizer(tapRecognizer)
+    }
+    
+    func tapReceived() {
+        letterView.drawLetter(letters.first!)
+        letters.removeFirst()
     }
 
 }
