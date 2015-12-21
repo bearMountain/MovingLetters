@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     //MARK: - Private
     
     var letterView = LetterView(frame: CGRect(x: 100, y: 100, width: 100, height: 50))
-    var letters = [A, B]
+    var letters = [B, A, B, A, B, A]
     
     func addLetterView() {
         view.addSubview(letterView)

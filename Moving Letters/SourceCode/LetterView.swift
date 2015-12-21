@@ -82,26 +82,58 @@ class LetterView: UIView {
                 animation.duration = animationDuration
                 animation.fromValue = 0
                 animation.toValue = 1
+                animation.removedOnCompletion = false
+                animation.fillMode = kCAFillModeForwards
                 lineLayer.addAnimation(animation, forKey: "strokeEnd")
+                
+                newStrokeLayers.append(lineLayer)
             }
                 
             // More Strokes in old letter
             else if (i >= newLetter.strokes.count) {
+                // animate stroke out
+                let layerToRemove = strokeLayers[i]
+                CATransaction.begin()
+                CATransaction.setCompletionBlock{
+                    layerToRemove.removeFromSuperlayer()
+                }
                 
+                let animation = CABasicAnimation(keyPath: "strokeEnd")
+                animation.duration = animationDuration
+                animation.fromValue = 1
+                animation.toValue = 0
+                animation.removedOnCompletion = false
+                animation.fillMode = kCAFillModeForwards
+                layerToRemove.addAnimation(animation, forKey: "strokeEnd")
+                
+                CATransaction.commit()
             }
                 
             // Changing old stroke to new stroke
             else {
                 let path = pathForStroke(newLetter.strokes[i])
                 
+                let strokeLayer = strokeLayers[i]
+                
                 let animation = CABasicAnimation(keyPath: "path")
                 animation.duration = animationDuration
+                animation.fromValue = strokeLayer.path
+                strokeLayer.path = path
                 animation.toValue = path
-                animation.removedOnCompletion = false
-                animation.fillMode = kCAFillModeForwards
+//                animation.removedOnCompletion = false
+//                animation.fillMode = kCAFillModeForwards
                 strokeLayers[i].addAnimation(animation, forKey: "path")
                 
                 newStrokeLayers.append(strokeLayers[i])
+                
+//                let animation = CABasicAnimation(keyPath: "path")
+//                animation.duration = animationDuration
+//                animation.fromValue = segmentLayer.path
+//                segmentLayer.path = newPath
+//                animation.toValue = newPath
+//                animation.removedOnCompletion = false
+//                animation.fillMode = kCAFillModeForwards
+//                segmentLayer.addAnimation(animation, forKey: "path")
             }
         }
         
